@@ -116,7 +116,27 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\n\n//# sourceURL=webpack://leaderboard-list-app/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_submitScore_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/submitScore.js */ \"./src/modules/submitScore.js\");\n/* harmony import */ var _modules_displayScore_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/displayScore.js */ \"./src/modules/displayScore.js\");\n\n\n\n\nconst submitBtn = document.querySelector('.submit-btn');\nconst refreshBtn = document.querySelector('.refresh-btn');\n\nsubmitBtn.addEventListener('click', () => {\n  (0,_modules_submitScore_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n  (0,_modules_displayScore_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n});\n\nrefreshBtn.addEventListener('click', _modules_displayScore_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"]);\n\n\n//# sourceURL=webpack://leaderboard-list-app/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/displayScore.js":
+/*!*************************************!*\
+  !*** ./src/modules/displayScore.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst table = document.querySelector('.score-table');\n\nconst displayScores = async () => {\n  table.innerHTML = '';\n  const response = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/GKB87zxChox9aRBKjZMc/scores');\n  const data = await response.json();\n  data.result.forEach((score) => {\n    const tr = document.createElement('tr');\n    const td = document.createElement('td');\n    const span1 = document.createElement('span');\n    const span2 = document.createElement('span');\n    span1.className = 'name';\n    span2.className = 'score';\n    span1.innerText = `${score.user}`;\n    span2.innerText = `${score.score}`;\n    td.innerText = `${span1} : ${span2};`;\n    tr.appendChild(td);\n    table.appendChild(tr);\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (displayScores);\n\n//# sourceURL=webpack://leaderboard-list-app/./src/modules/displayScore.js?");
+
+/***/ }),
+
+/***/ "./src/modules/submitScore.js":
+/*!************************************!*\
+  !*** ./src/modules/submitScore.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst nameInput = document.getElementById('name-input');\nconst scoreInput = document.getElementById('score-input');\n\nconst addScore = async () => {\n  const name = nameInput.value;\n  const score = scoreInput.value;\n\n  await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/GKB87zxChox9aRBKjZMc/scores',\n    {\n      method: 'POST',\n      headers: {\n        'Content-type': 'application/json; charset=UTF-8',\n      },\n      body: JSON.stringify({\n        user: name,\n        score,\n      }),\n    });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addScore);\n\n//# sourceURL=webpack://leaderboard-list-app/./src/modules/submitScore.js?");
 
 /***/ })
 

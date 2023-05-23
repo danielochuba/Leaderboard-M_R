@@ -50,12 +50,19 @@ main {
   row-gap: 7px;
   align-items: end;
   width: 100%;
+  margin-bottom: 15px;
 }
 
 .score-table {
   border: 1px solid #000;
   width: 100%;
-  height: 200px;
+  height: 20px;
+  overflow-y: scroll;
+}
+
+.score-box {
+  height: 300px;
+  overflow-y: scroll;
 }
 
 td {
@@ -112,7 +119,6 @@ tr:nth-child(odd) {
   .score-table {
     border: 1px solid #000;
     width: 100%;
-    height: 200px;
   }
 
   tr:nth-child(odd) {
@@ -216,4 +222,16 @@ tr:nth-child(odd) {
     height: 200px;
     font-size: 25px;
   }
+}
+
+.post-message {
+  height: 25px;
+  width: 60%;
+  color: #fff;
+  margin: auto;
+  background: rgb(55, 225, 97);
+  text-align: center;
+  font-weight: 700;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  border-radius: 5px;
 }

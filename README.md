@@ -68,6 +68,7 @@
 > Describe between 1-3 key features of the application.
 
 - **[Display scores]**
+- **[API requests]**
 
 
 
@@ -148,9 +149,7 @@ Example command:
 
 > Describe 1 - 3 features you will add to the project.
 
-- [ ] **[Button Styles]**
-- [ ] **[Dynamic Page]**
-- [ ] **[API ]**
+- [ ] **[Custom Styling]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
