@@ -1,14 +1,18 @@
-const ul = document.querySelector('ul');
+const table = document.querySelector('.score-table');
 
 const displayScores = async () => {
-  ul.innerHTML = '';
-  const response = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/Zl4d7IVkemOTTVg2fUdz/scores');
+  table.innerHTML = '';
+  const response = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/GKB87zxChox9aRBKjZMc/scores');
   const data = await response.json();
   data.result.forEach((score) => {
-    const li = document.createElement('li');
-    li.innerHTML += `<span class="user-name">${score.user}: &nbsp; </span><span class="user-score">${score.score}</span>`;
-
-    ul.appendChild(li);
+    const tr = document.createElement('tr');
+    const td = document.createElement('td');
+    td.innerHTML = `
+                    <span class="name">${score.user}</span>: 
+                    <span class="score">${score.score}</span>
+                `;
+    tr.appendChild(td);
+    table.appendChild(tr);
   });
 };
 
