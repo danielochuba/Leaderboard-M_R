@@ -8,7 +8,7 @@ const displayScores = async () => {
     const tr = document.createElement('tr');
     const td = document.createElement('td');
     td.innerHTML = `
-                    <span class="name">${score.user}</span>: 
+                    <span class="name">${score.user}</span>  : 
                     <span class="score">${score.score}</span>
                 `;
     tr.appendChild(td);
