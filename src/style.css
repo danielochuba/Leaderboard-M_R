@@ -1,34 +1,26 @@
 * {
   box-sizing: border-box;
-  font-family: 'Comic Neue', cursive;
-}
-
-body {
-  background-color: #f0f0f0;
-}
-
-.name {
-  font-weight: 700;
-  font-size: 120%;
 }
 
 .title {
+  position: relative;
+  margin: 0;
+  top: 40%;
+  left: 7%;
   font-weight: 700;
-  width: 100%;
-  padding: 20px 40px;
-  background-color: #333;
-  color: white;
-  border-radius: 5px 5px 0 0;
-  font-size: 120%;
+}
+
+body {
+  padding: 30px 20px;
 }
 
 main {
-  width: 90%;
+  margin-top: 5%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 30px;
-  margin: auto;
 }
 
 .display-top {
@@ -39,20 +31,16 @@ main {
 .refresh-btn {
   height: 30px;
   margin: 5px;
-  box-shadow: 4px 3px 1px #ffc107;
 }
 
-tr {
-  height: 50px;
-}
-
+.refresh-btn,
 .submit-btn {
   box-shadow: 4px 3px 1px #454545;
 }
 
 .add-score,
 .recent-scores {
-  font-size: 100%;
+  font-size: 130%;
   font-weight: 700;
 }
 
@@ -65,30 +53,15 @@ tr {
   margin-bottom: 15px;
 }
 
-input {
-  border-radius: 7px;
-}
-
 .score-table {
   border: 1px solid #000;
   width: 100%;
   height: 20px;
   overflow-y: scroll;
-  box-shadow: inset;
-}
-
-.scores-input {
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  border-radius: 4px;
-  height: 300px;
-  justify-content: center;
-  padding: 1px 20px;
 }
 
 .score-box {
-  height: 400px;
+  height: 300px;
   overflow-y: scroll;
 }
 
@@ -112,36 +85,35 @@ tr:nth-child(odd) {
 
   .scores-display,
   .scores-input {
-    width: 47%;
+    width: 20%;
   }
 
   .scores-input {
-    background: #fff;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    border-radius: 4px;
-    height: 400px;
-    justify-content: center;
   }
 
   .display-top {
-    width: 100%;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    column-gap: 20px;
   }
 
   .refresh-btn {
+    width: 90px;
     height: 30px;
     margin: 5px;
-    font-size: initial;
   }
 
   .add-score,
   .recent-scores {
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 700;
+  }
+
+  .add-score {
+    margin-right: 20px;
   }
 
   .score-table {
@@ -162,7 +134,7 @@ tr:nth-child(odd) {
   }
 
   .form-input > input {
-    width: 90%;
+    width: 80%;
   }
 
   .submit-btn {
@@ -170,15 +142,23 @@ tr:nth-child(odd) {
   }
 }
 
-@media screen and (min-width: 1075px) {
+@media screen and (min-width: 768px) {
   .scores-display,
   .scores-input {
     width: 35%;
   }
 
-  nav {
-    width: 80%;
-    margin: auto;
+  .add-score,
+  .recent-scores {
+    font-size: 25px;
+    font-weight: 700;
+  }
+}
+
+@media screen and (min-width: 1075px) {
+  .scores-display,
+  .scores-input {
+    width: 35%;
   }
 
   .add-score,
@@ -205,10 +185,6 @@ tr:nth-child(odd) {
     margin-top: 3%;
   }
 
-  .title {
-    font-size: 70px;
-  }
-
   .scores-display,
   .scores-input {
     width: 30%;
@@ -218,6 +194,12 @@ tr:nth-child(odd) {
   .recent-scores {
     font-size: 30px;
     font-weight: 700;
+  }
+
+  .refresh-btn,
+  .submit-btn {
+    box-shadow: 4px 3px 1px #454545;
+    font-size: 20px;
   }
 
   .refresh-btn {
@@ -234,21 +216,10 @@ tr:nth-child(odd) {
     font-size: 25px;
   }
 
-  .scores-input {
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    border-radius: 10px;
-    height: 400px;
-    align-items: center;
-    width: 450px;
-    padding-right: 20px;
-  }
-
   .score-table {
     border: 1px solid #000;
     width: 100%;
-    height: 300px;
+    height: 200px;
     font-size: 25px;
   }
 }
